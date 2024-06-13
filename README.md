@@ -22,3 +22,5 @@
 2° Página (Aplicativo) - https://github.com/guigo789/Prototipos_app/wiki/Aplicativo
 
 3° Página (Desenvolvimento do APP) - https://github.com/guigo789/Prototipos_app/wiki/Desenvolvimento-do-APP
+
+**A wiki está no perfil do outro integrante pois as demais informações estão no repositorio antigo que não foi ultilizado por dificuldades no acesso ao github por erro no acesso do email institucional.**
