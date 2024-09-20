@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class TelaMuseu extends StatefulWidget {
   const TelaMuseu({Key? key}) : super(key: key);
@@ -25,7 +26,8 @@ class _TelaMuseuState extends State<TelaMuseu> {
               height: 200, // altura do cabeçalho
               decoration: const BoxDecoration(
                 image: DecorationImage(
-                  image: AssetImage('assets/museus_sp.jpg'), // imagem do fundo da tela
+                  image: AssetImage(
+                      'assets/museus_sp.jpg'), // imagem do fundo da tela
                   fit: BoxFit.cover,
                 ),
               ),
@@ -39,26 +41,130 @@ class _TelaMuseuState extends State<TelaMuseu> {
                   _buildMuseumContainer(
                     imageUrl: 'assets/masp_sp.jpg',
                     name: 'Museu de Arte de São Paulo',
-                    address: 'Endereço: Av. Paulista, 1578 - Bela Vista, São Paulo - SP, 01310-200',
-                    description: 'Descrição: O Museu de Arte de São Paulo Assis Chateaubriand (MASP) é um museu privado sem fins lucrativos. É considerado um dos mais importantes museus de arte do Hemisfério Sul e o primeiro museu moderno no Brasil. Sua principal missão é institucionalizar o vazio. A curadoria, de lá para cá, faz uma gestão de acervo sem precedentes. Foi fundado em 7 de novembro de 1947 por Assis Chateaubriand e Pietro Maria Bardi.',
+                    address:
+                        'Endereço: Av. Paulista, 1578 - Bela Vista, São Paulo - SP, 01310-200',
+                    description:
+                        'Descrição: O Museu de Arte de São Paulo Assis Chateaubriand (MASP) é um museu privado sem fins lucrativos. É considerado um dos mais importantes museus de arte do Hemisfério Sul e o primeiro museu moderno no Brasil. Sua principal missão é institucionalizar o vazio. A curadoria, de lá para cá, faz uma gestão de acervo sem precedentes. Foi fundado em 7 de novembro de 1947 por Assis Chateaubriand e Pietro Maria Bardi.',
+                  ),
+                  Center(
+                    child: ElevatedButton(
+                      onPressed: () async {
+                        const url = 'https://maps.app.goo.gl/fyMibcnubMbA2ono7';
+                        if (await canLaunch(url)) {
+                          await launch(url);
+                        } else {
+                          throw 'Could not launch $url';
+                        }
+                      },
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.yellow, // Cor de fundo
+                        foregroundColor: Colors.white, // Cor do texto
+                        padding: const EdgeInsets.symmetric(
+                          vertical: 20.0, // Aumentando a altura
+                          horizontal: 30.0,
+                        ),
+                        textStyle: const TextStyle(
+                          fontSize: 23.0, // Tamanho da fonte
+                        ),
+                      ),
+                      child: const Text('Localização'),
+                    ),
                   ),
                   _buildMuseumContainer(
                     imageUrl: 'assets/pinacoteca_sp.jpg',
                     name: 'Pinacoteca de São Paulo',
-                    address: 'Endereço: Praça da Luz, 2 - Luz, São Paulo - SP, 01120-010',
-                    description: 'Descrição: A Pinacoteca do Estado de São Paulo é um dos mais importantes museus de arte do Brasil. Ocupa um edifício no Jardim da Luz, no centro de São Paulo, projetado por Ramos de Azevedo e Domiziano Rossi para ser a sede do Liceu de Artes e Ofícios. É o mais antigo museu de arte de São Paulo, fundado em 1905 e regulamentado como museu público estadual desde 1911.',
+                    address:
+                        'Endereço: Praça da Luz, 2 - Luz, São Paulo - SP, 01120-010',
+                    description:
+                        'Descrição: A Pinacoteca do Estado de São Paulo é um dos mais importantes museus de arte do Brasil. Ocupa um edifício no Jardim da Luz, no centro de São Paulo, projetado por Ramos de Azevedo e Domiziano Rossi para ser a sede do Liceu de Artes e Ofícios. É o mais antigo museu de arte de São Paulo, fundado em 1905 e regulamentado como museu público estadual desde 1911.',
+                  ),
+                  Center(
+                    child: ElevatedButton(
+                      onPressed: () async {
+                        const url = 'https://maps.app.goo.gl/o1QepTKX2MrQs3hQ8';
+                        if (await canLaunch(url)) {
+                          await launch(url);
+                        } else {
+                          throw 'Could not launch $url';
+                        }
+                      },
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.yellow, // Cor de fundo
+                        foregroundColor: Colors.white, // Cor do texto
+                        padding: const EdgeInsets.symmetric(
+                          vertical: 20.0, // Aumentando a altura
+                          horizontal: 30.0,
+                        ),
+                        textStyle: const TextStyle(
+                          fontSize: 23.0, // Tamanho da fonte
+                        ),
+                      ),
+                      child: const Text('Localização'),
+                    ),
                   ),
                   _buildMuseumContainer(
                     imageUrl: 'assets/ipiranga_sp.jpg',
                     name: 'Museu do Ipiranga',
-                    address: 'Endereço: Parque da Independência - Ipiranga, São Paulo - SP, 04263-000',
-                    description: 'Descrição: O Museu Paulista da Universidade de São Paulo, conhecido como Museu do Ipiranga, é um museu localizado na cidade de São Paulo, sendo parte do conjunto arquitetônico do Parque da Independência. É o mais importante museu da Universidade de São Paulo e um dos mais visitados da cidade.',
+                    address:
+                        'Endereço: Parque da Independência - Ipiranga, São Paulo - SP, 04263-000',
+                    description:
+                        'Descrição: O Museu Paulista da Universidade de São Paulo, conhecido como Museu do Ipiranga, é um museu localizado na cidade de São Paulo, sendo parte do conjunto arquitetônico do Parque da Independência. É o mais importante museu da Universidade de São Paulo e um dos mais visitados da cidade.',
+                  ),
+                  Center(
+                    child: ElevatedButton(
+                      onPressed: () async {
+                        const url = 'https://maps.app.goo.gl/xwKsr1RhHuZ4KyRXA';
+                        if (await canLaunch(url)) {
+                          await launch(url);
+                        } else {
+                          throw 'Could not launch $url';
+                        }
+                      },
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.yellow, // Cor de fundo
+                        foregroundColor: Colors.white, // Cor do texto
+                        padding: const EdgeInsets.symmetric(
+                          vertical: 20.0, // Aumentando a altura
+                          horizontal: 30.0,
+                        ),
+                        textStyle: const TextStyle(
+                          fontSize: 23.0, // Tamanho da fonte
+                        ),
+                      ),
+                      child: const Text('Localização'),
+                    ),
                   ),
                   _buildMuseumContainer(
                     imageUrl: 'assets/arte_moderna_sp.jpg',
                     name: 'Museu de Arte Moderna de São Paulo',
-                    address: 'Endereço: Av. Pedro Álvares Cabral, s/n° - Vila Mariana, São Paulo - SP, 04094-000',
-                    description: 'Descrição: O Museu de Arte Moderna de São Paulo (MAM) é uma das mais importantes instituições culturais brasileiras. Localizado no Parque do Ibirapuera, na cidade de São Paulo, foi inaugurado em 1948 e é voltado para a produção artística contemporânea. O MAM é reconhecido internacionalmente pela sua relevância histórica e contribuição para a arte moderna e contemporânea no Brasil.',
+                    address:
+                        'Endereço: Av. Pedro Álvares Cabral, s/n° - Vila Mariana, São Paulo - SP, 04094-000',
+                    description:
+                        'Descrição: O Museu de Arte Moderna de São Paulo (MAM) é uma das mais importantes instituições culturais brasileiras. Localizado no Parque do Ibirapuera, na cidade de São Paulo, foi inaugurado em 1948 e é voltado para a produção artística contemporânea. O MAM é reconhecido internacionalmente pela sua relevância histórica e contribuição para a arte moderna e contemporânea no Brasil.',
+                  ),
+                  Center(
+                    child: ElevatedButton(
+                      onPressed: () async {
+                        const url = 'https://maps.app.goo.gl/wnUoiED3L4qtXMq29';
+                        if (await canLaunch(url)) {
+                          await launch(url);
+                        } else {
+                          throw 'Could not launch $url';
+                        }
+                      },
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.yellow, // Cor de fundo
+                        foregroundColor: Colors.white, // Cor do texto
+                        padding: const EdgeInsets.symmetric(
+                          vertical: 20.0, // Aumentando a altura
+                          horizontal: 30.0,
+                        ),
+                        textStyle: const TextStyle(
+                          fontSize: 23.0, // Tamanho da fonte
+                        ),
+                      ),
+                      child: const Text('Localização'),
+                    ),
                   ),
                 ],
               ),
@@ -76,7 +182,8 @@ class _TelaMuseuState extends State<TelaMuseu> {
     required String description,
   }) {
     return Container(
-      width: double.infinity, // serve para o container pegar a largura total da tela
+      width: double
+          .infinity, // serve para o container pegar a largura total da tela
       margin: const EdgeInsets.only(bottom: 16),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -84,7 +191,8 @@ class _TelaMuseuState extends State<TelaMuseu> {
           Image.asset(
             imageUrl,
             height: 200, // define altura da imagem
-            width: double.infinity, // também pega a largura total, só que é a imagem
+            width: double
+                .infinity, // também pega a largura total, só que é a imagem
             fit: BoxFit.cover,
           ),
           const SizedBox(height: 12),
